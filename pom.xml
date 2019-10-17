@@ -22,7 +22,7 @@ License along with the IFDM Suite. If not, see <http://www.gnu.org/licenses />. 
 
     <groupId>eu.europa.ec.fisheries.uvms</groupId>
     <artifactId>mare-pom</artifactId>
-    <version>1.6</version>
+    <version>1.6.0-MARE</version>
     <packaging>pom</packaging>
     <name>mare-pom</name>
     <description>mare pom, parent for mare released projects</description>
