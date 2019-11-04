@@ -137,7 +137,7 @@
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>build-helper-maven-plugin</artifactId>
-					<version>${mare-pom.liquibase.maven.plugin.version}</version>
+					<version>${mare-pom.buildhelper.maven.plugin.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.cxf</groupId>
