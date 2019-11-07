@@ -51,7 +51,7 @@
 		<installAtEnd>false</installAtEnd>
 		<changelist>-MARE</changelist>
 		<buildTS>${revision}</buildTS>
-		<sha1></sha1>
+		<sha1>-SNAPSHOT</sha1>
 		<revision>-SNAPSHOT</revision>
 		<uvms.commonsLibrary.version>3.4${changelist}${revision}</uvms.commonsLibrary.version>
 		<uvms.uvms4usm.version>4.0.15.1${changelist}${revision}</uvms.uvms4usm.version>
@@ -83,6 +83,7 @@
 		<uvms.plugins.flux.sales.version>1.0.17${changelist}${revision}</uvms.plugins.flux.sales.version>
 
 		<uvms.mdr.module.version>1.0.18${changelist}${revision}</uvms.mdr.module.version>
+		<uvms.docker.version>${project.version}</uvms.docker.version>
 
 		<usm.information.version>2.0.0</usm.information.version>
 		<usm.jwt-handler.version>2.0.0</usm.jwt-handler.version>
