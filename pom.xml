@@ -85,10 +85,10 @@
 		<uvms.mdr.module.version>1.0.18${changelist}${revision}</uvms.mdr.module.version>
 		<uvms.docker.version>${project.version}</uvms.docker.version>
 
-		<usm.information.version>2.0.0</usm.information.version>
-		<usm.jwt-handler.version>2.0.0</usm.jwt-handler.version>
-		<usm.authentication.version>2.0.0</usm.authentication.version>
-		<usm.administration.version>2.0.0</usm.administration.version>
+		<usm.information.version>2.1.11</usm.information.version>
+		<usm.jwt-handler.version>2.1.11</usm.jwt-handler.version>
+		<usm.authentication.version>2.1.11</usm.authentication.version>
+		<usm.administration.version>2.1.11</usm.administration.version>
 
 	</properties>
 
