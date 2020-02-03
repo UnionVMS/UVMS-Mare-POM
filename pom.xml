@@ -76,6 +76,7 @@
 		<uvms.sales.proxy.version>1.0.10${changelist}${revision}</uvms.sales.proxy.version>
 		<uvms.user.module.version>2.0.15${changelist}${revision}</uvms.user.module.version>
 		<uvms.mobileterminal.module.version>4.0.14${changelist}${revision}</uvms.mobileterminal.module.version>
+		<uvms.geoserver-overlay.version>2.12.3${changelist}${revision}</uvms.geoserver-overlay.version>
 
 		<uvms.plugins.flux.movement.version>3.0.17${changelist}${revision}</uvms.plugins.flux.movement.version>
 		<uvms.plugins.flux.activity.version>1.2${changelist}${revision}</uvms.plugins.flux.activity.version>
