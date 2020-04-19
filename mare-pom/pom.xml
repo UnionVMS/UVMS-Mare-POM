@@ -53,7 +53,7 @@
 		<buildTS>${revision}</buildTS>
 		<sha1>-SNAPSHOT</sha1>
 		<revision>-SNAPSHOT</revision>
-		<uvms.commonsLibrary.version>3.4${changelist}${revision}</uvms.commonsLibrary.version>
+		<uvms.commonsLibrary.version>3.5${changelist}${revision}</uvms.commonsLibrary.version>
 		<uvms.uvms4usm.version>4.0.15.1${changelist}${revision}</uvms.uvms4usm.version>
 		<uvms.config.module.version>4.0.14${changelist}${revision}</uvms.config.module.version>
 		<uvms.config.library.version>4.2${changelist}${revision}</uvms.config.library.version>
