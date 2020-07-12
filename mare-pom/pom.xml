@@ -71,7 +71,7 @@
 		<uvms.reporting.module.version>1.1.10${changelist}${revision}</uvms.reporting.module.version>
 		<uvms.spatial.module.version>1.1.16.1${changelist}${revision}</uvms.spatial.module.version>
 		<uvms.rules.module.version>3.4${changelist}${revision}</uvms.rules.module.version>
-		<uvms.subscription.module.version>1.4.5${changelist}${revision}</uvms.subscription.module.version>
+		<uvms.subscription.module.version>2.0.0${changelist}${revision}</uvms.subscription.module.version>
 		<uvms.sales.module.version>1.0.23${changelist}${revision}</uvms.sales.module.version>
 		<uvms.sales.proxy.version>1.0.10${changelist}${revision}</uvms.sales.proxy.version>
 		<uvms.user.module.version>2.0.15${changelist}${revision}</uvms.user.module.version>
