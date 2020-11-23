@@ -31,6 +31,7 @@
 	<description>mare pom, parent for mare released projects</description>
 
 	<properties>
+		<uvms.platform.version>1.6.1</uvms.platform.version>
 		<!-- ================= -->
 		<!-- Maven default properties -->
 		<!-- ================= -->
@@ -46,7 +47,7 @@
 		<mare-pom.cxf.codegen.plugin.version>2.7.6</mare-pom.cxf.codegen.plugin.version>
 		<mare-pom.replacer.plugin.version>1.5.3</mare-pom.replacer.plugin.version>
 
-		<!-- override install at end at it seems to prevent install in some cases 
+		<!-- override install at end at it seems to prevent install in some cases
 			(when extensions are used) -->
 		<installAtEnd>false</installAtEnd>
 		<changelist>-MARE</changelist>
