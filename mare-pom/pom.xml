@@ -87,19 +87,19 @@
         <uvms.user.module.version>2.0.15${changelist}${revision}</uvms.user.module.version>
         <uvms.mobileterminal.module.version>4.0.14${changelist}${revision}</uvms.mobileterminal.module.version>
         <uvms.geoserver-overlay.version>2.12.3${changelist}${revision}</uvms.geoserver-overlay.version>
-
         <uvms.plugins.flux.movement.version>3.0.17${changelist}${revision}</uvms.plugins.flux.movement.version>
         <uvms.plugins.flux.activity.version>1.2${changelist}${revision}</uvms.plugins.flux.activity.version>
         <uvms.plugins.flux.mdr.version>1.0.8${changelist}${revision}</uvms.plugins.flux.mdr.version>
         <uvms.plugins.flux.sales.version>1.0.17${changelist}${revision}</uvms.plugins.flux.sales.version>
-
         <uvms.mdr.module.version>1.0.18${changelist}${revision}</uvms.mdr.module.version>
+
         <uvms.docker.version>${project.version}</uvms.docker.version>
 
-        <usm.information.version>2.1.11</usm.information.version>
-        <usm.jwt-handler.version>2.1.11</usm.jwt-handler.version>
-        <usm.authentication.version>2.1.11</usm.authentication.version>
-        <usm.administration.version>2.1.11</usm.administration.version>
+        <uvms.usm.version>2.1.11${changelist}${revision}</uvms.usm.version>
+        <usm.information.version>2.1.11${changelist}${revision}</usm.information.version>
+        <usm.jwt-handler.version>2.1.11${changelist}${revision}</usm.jwt-handler.version>
+        <usm.authentication.version>2.1.11${changelist}${revision}</usm.authentication.version>
+        <usm.administration.version>2.1.11${changelist}${revision}</usm.administration.version>
 
         <uvms.mapfish.print.version>3.6${changelist}${revision}</uvms.mapfish.print.version>
         <uvms-pom.javaee.version>8.0</uvms-pom.javaee.version>
@@ -117,6 +117,7 @@
         <uvms-pom.test.deps.powermock.version>1.6.6</uvms-pom.test.deps.powermock.version>
 
         <version.hibernate-jpamodelgen>5.4.12.Final</version.hibernate-jpamodelgen>
+	<context.root>unionvms/</context.root>
     </properties>
 
     <scm>
