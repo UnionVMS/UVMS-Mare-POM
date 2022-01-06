@@ -88,18 +88,21 @@
 		<uvms.plugins.flux.sales.version>1.0.17${changelist}${revision}</uvms.plugins.flux.sales.version>
 
 		<uvms.mdr.module.version>1.0.18${changelist}${revision}</uvms.mdr.module.version>
+		
 		<uvms.docker.version>${project.version}</uvms.docker.version>
 
-		<usm.information.version>2.1.11</usm.information.version>
-		<usm.jwt-handler.version>2.1.11</usm.jwt-handler.version>
-		<usm.authentication.version>2.1.11</usm.authentication.version>
-		<usm.administration.version>2.1.11</usm.administration.version>
+        	<uvms.usm.version>2.1.11${changelist}${revision}</uvms.usm.version>
+		<usm.information.version>2.1.11${changelist}${revision}</usm.information.version>
+		<usm.jwt-handler.version>2.1.11${changelist}${revision}</usm.jwt-handler.version>
+		<usm.authentication.version>2.1.11${changelist}${revision}</usm.authentication.version>
+		<usm.administration.version>2.1.11${changelist}${revision}</usm.administration.version>
 
 		<version.uvms-pom>1.21</version.uvms-pom>
 		<version.commons.lang3>3.7</version.commons.lang3>
 		<version.hibernate-jpamodelgen>5.4.12.Final</version.hibernate-jpamodelgen>
 
 		<focus-pom.java.version>1.8</focus-pom.java.version>
+		<context.root>unionvms/</context.root>
 	</properties>
 
 	<scm>

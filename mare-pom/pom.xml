@@ -13,214 +13,289 @@
 	/>. -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>fish.focus.uvms.maven</groupId>
-		<artifactId>uvms-pom</artifactId>
-		<version>1.21</version>
-		<relativePath />
-	</parent>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--	<parent>-->
+    <!--		<groupId>fish.focus.uvms.maven</groupId>-->
+    <!--		<artifactId>uvms-pom</artifactId>-->
+    <!--		<version>1.21</version>-->
+    <!--		<relativePath />-->
+    <!--	</parent>-->
 
-	<groupId>eu.europa.ec.fisheries.uvms</groupId>
-	<artifactId>mare-pom</artifactId>
-	<version>1.6.0-MARE${sha1}</version>
-	<packaging>pom</packaging>
-	<name>mare-pom</name>
-	<description>mare pom, parent for mare released projects</description>
+    <groupId>eu.europa.ec.fisheries.uvms</groupId>
+    <artifactId>mare-pom</artifactId>
+    <version>1.6.0-MARE${sha1}</version>
+    <packaging>pom</packaging>
+    <name>mare-pom</name>
+    <description>mare pom, parent for mare released projects</description>
 
-	<properties>
-		<uvms.platform.version>1.6.1</uvms.platform.version>
-		<!-- ================= -->
-		<!-- Maven default properties -->
-		<!-- ================= -->
-		<!-- Release plugin -->
-		<project.scm.id>github</project.scm.id>
+    <properties>
+        <uvms.platform.version>1.6.1</uvms.platform.version>
+        <!-- ================= -->
+        <!-- Maven default properties -->
+        <!-- ================= -->
+        <!-- Release plugin -->
+        <project.scm.id>github</project.scm.id>
 
-		<!-- ================================ -->
-		<!-- Maven plugin versions properties -->
-		<!-- ================================ -->
-		<!--# Core plugins -->
-		<mare-pom.buildhelper.maven.plugin.version>3.0.0</mare-pom.buildhelper.maven.plugin.version>
-		<mare-pom.liquibase.maven.plugin.version>3.5.3</mare-pom.liquibase.maven.plugin.version>
-		<mare-pom.cxf.codegen.plugin.version>2.7.6</mare-pom.cxf.codegen.plugin.version>
-		<mare-pom.replacer.plugin.version>1.5.3</mare-pom.replacer.plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<!-- override install at end at it seems to prevent install in some cases 
-			(when extensions are used) -->
-		<installAtEnd>false</installAtEnd>
-		<changelist>-MARE</changelist>
-		<buildTS>${revision}</buildTS>
-		<sha1>-SNAPSHOT</sha1>
-		<revision>-SNAPSHOT</revision>
-		<uvms.commonsLibrary.version>3.5${changelist}${revision}</uvms.commonsLibrary.version>
-		<uvms.uvms4usm.version>4.0.15.1${changelist}${revision}</uvms.uvms4usm.version>
-		<uvms.config.module.version>4.0.14${changelist}${revision}</uvms.config.module.version>
-		<uvms.config.library.version>4.2${changelist}${revision}</uvms.config.library.version>
-		<uvms.audit.module.version>4.0.14${changelist}${revision}</uvms.audit.module.version>
-		<uvms.exchange.model.version>4.0.35${changelist}${revision}</uvms.exchange.model.version>
-		<uvms.activity.model.version>1.0.11${changelist}${revision}</uvms.activity.model.version>
-		<uvms.mdr.model.version>1.0.6${changelist}${revision}</uvms.mdr.model.version>
-		<uvms.sales.model.version>1.0.13${changelist}${revision}</uvms.sales.model.version>
-		<uvms.reporting.model.version>1.0.5${changelist}${revision}</uvms.reporting.model.version>
-		<uvms.spatial.model.version>1.0.13${changelist}${revision}</uvms.spatial.model.version>
-		<uvms.movement.module.version>5.1.8${changelist}${revision}</uvms.movement.module.version>
-		<uvms.asset.module.version>4.0.24${changelist}${revision}</uvms.asset.module.version>
-		<uvms.activity.module.version>1.1.16${changelist}${revision}</uvms.activity.module.version>
-		<uvms.exchange.module.version>4.0.44${changelist}${revision}</uvms.exchange.module.version>
-		<uvms.reporting.module.version>1.1.10${changelist}${revision}</uvms.reporting.module.version>
-		<uvms.spatial.module.version>1.1.16.1${changelist}${revision}</uvms.spatial.module.version>
-		<uvms.rules.module.version>3.4${changelist}${revision}</uvms.rules.module.version>
-		<uvms.subscription.module.version>2.0.0${changelist}${revision}</uvms.subscription.module.version>
-		<uvms.sales.module.version>1.0.23${changelist}${revision}</uvms.sales.module.version>
-		<uvms.sales.proxy.version>1.0.10${changelist}${revision}</uvms.sales.proxy.version>
-		<uvms.user.module.version>2.0.15${changelist}${revision}</uvms.user.module.version>
-		<uvms.mobileterminal.module.version>4.0.14${changelist}${revision}</uvms.mobileterminal.module.version>
-		<uvms.geoserver-overlay.version>2.12.3${changelist}${revision}</uvms.geoserver-overlay.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+        <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
 
-		<uvms.plugins.flux.movement.version>3.0.17${changelist}${revision}</uvms.plugins.flux.movement.version>
-		<uvms.plugins.flux.activity.version>1.2${changelist}${revision}</uvms.plugins.flux.activity.version>
-		<uvms.plugins.flux.mdr.version>1.0.8${changelist}${revision}</uvms.plugins.flux.mdr.version>
-		<uvms.plugins.flux.sales.version>1.0.17${changelist}${revision}</uvms.plugins.flux.sales.version>
+        <focus-pom.java.version>1.8</focus-pom.java.version>
+        <!-- ================================ -->
+        <!-- Maven plugin versions properties -->
+        <!-- ================================ -->
+        <!--# Core plugins -->
+        <mare-pom.buildhelper.maven.plugin.version>3.0.0</mare-pom.buildhelper.maven.plugin.version>
+        <mare-pom.liquibase.maven.plugin.version>3.5.3</mare-pom.liquibase.maven.plugin.version>
+        <mare-pom.cxf.codegen.plugin.version>2.7.6</mare-pom.cxf.codegen.plugin.version>
+        <mare-pom.replacer.plugin.version>1.5.3</mare-pom.replacer.plugin.version>
 
-		<uvms.mdr.module.version>1.0.18${changelist}${revision}</uvms.mdr.module.version>
-		<uvms.docker.version>${project.version}</uvms.docker.version>
+        <!-- override install at end at it seems to prevent install in some cases
+            (when extensions are used) -->
+        <installAtEnd>false</installAtEnd>
+        <changelist>-MARE</changelist>
+        <buildTS>${revision}</buildTS>
+        <sha1>-SNAPSHOT</sha1>
+        <revision>-SNAPSHOT</revision>
+        <uvms.commonsLibrary.version>3.5${changelist}${revision}</uvms.commonsLibrary.version>
+        <uvms.uvms4usm.version>4.0.15.1${changelist}${revision}</uvms.uvms4usm.version>
+        <uvms.config.module.version>4.0.14${changelist}${revision}</uvms.config.module.version>
+        <uvms.config.library.version>4.2${changelist}${revision}</uvms.config.library.version>
+        <uvms.audit.module.version>4.0.14${changelist}${revision}</uvms.audit.module.version>
+        <uvms.exchange.model.version>4.0.35${changelist}${revision}</uvms.exchange.model.version>
+        <uvms.activity.model.version>1.0.11${changelist}${revision}</uvms.activity.model.version>
+        <uvms.mdr.model.version>1.0.6${changelist}${revision}</uvms.mdr.model.version>
+        <uvms.sales.model.version>1.0.13${changelist}${revision}</uvms.sales.model.version>
+        <uvms.reporting.model.version>1.0.5${changelist}${revision}</uvms.reporting.model.version>
+        <uvms.spatial.model.version>1.0.13${changelist}${revision}</uvms.spatial.model.version>
+        <uvms.movement.module.version>5.1.8${changelist}${revision}</uvms.movement.module.version>
+        <uvms.asset.module.version>4.0.24${changelist}${revision}</uvms.asset.module.version>
+        <uvms.activity.module.version>1.1.16${changelist}${revision}</uvms.activity.module.version>
+        <uvms.exchange.module.version>4.0.44${changelist}${revision}</uvms.exchange.module.version>
+        <uvms.reporting.module.version>1.1.10${changelist}${revision}</uvms.reporting.module.version>
+        <uvms.spatial.module.version>1.1.16.1${changelist}${revision}</uvms.spatial.module.version>
+        <uvms.rules.module.version>3.4${changelist}${revision}</uvms.rules.module.version>
+        <uvms.subscription.module.version>2.0.0${changelist}${revision}</uvms.subscription.module.version>
+        <uvms.sales.module.version>1.0.23${changelist}${revision}</uvms.sales.module.version>
+        <uvms.sales.proxy.version>1.0.10${changelist}${revision}</uvms.sales.proxy.version>
+        <uvms.user.module.version>2.0.15${changelist}${revision}</uvms.user.module.version>
+        <uvms.mobileterminal.module.version>4.0.14${changelist}${revision}</uvms.mobileterminal.module.version>
+        <uvms.geoserver-overlay.version>2.12.3${changelist}${revision}</uvms.geoserver-overlay.version>
+        <uvms.plugins.flux.movement.version>3.0.17${changelist}${revision}</uvms.plugins.flux.movement.version>
+        <uvms.plugins.flux.activity.version>1.2${changelist}${revision}</uvms.plugins.flux.activity.version>
+        <uvms.plugins.flux.mdr.version>1.0.8${changelist}${revision}</uvms.plugins.flux.mdr.version>
+        <uvms.plugins.flux.sales.version>1.0.17${changelist}${revision}</uvms.plugins.flux.sales.version>
+        <uvms.mdr.module.version>1.0.18${changelist}${revision}</uvms.mdr.module.version>
 
-		<usm.information.version>2.1.11</usm.information.version>
-		<usm.jwt-handler.version>2.1.11</usm.jwt-handler.version>
-		<usm.authentication.version>2.1.11</usm.authentication.version>
-		<usm.administration.version>2.1.11</usm.administration.version>
+        <uvms.docker.version>${project.version}</uvms.docker.version>
 
-		<uvms.mapfish.print.version>3.6${changelist}${revision}</uvms.mapfish.print.version>
-	</properties>
+        <uvms.usm.version>2.1.11${changelist}${revision}</uvms.usm.version>
+        <usm.information.version>2.1.11${changelist}${revision}</usm.information.version>
+        <usm.jwt-handler.version>2.1.11${changelist}${revision}</usm.jwt-handler.version>
+        <usm.authentication.version>2.1.11${changelist}${revision}</usm.authentication.version>
+        <usm.administration.version>2.1.11${changelist}${revision}</usm.administration.version>
 
-	<scm>
-		<connection>scm:git:https://github.com/UnionVMS/UVMS-Mare-POM.git</connection>
-		<tag>HEAD</tag>
-	</scm>
+        <uvms.mapfish.print.version>3.6${changelist}${revision}</uvms.mapfish.print.version>
+        <uvms-pom.javaee.version>8.0</uvms-pom.javaee.version>
+        <uvms-pom.commons.collections>3.2.2</uvms-pom.commons.collections>
+        <uvms-pom.commons.lang.version>2.6</uvms-pom.commons.lang.version>
+        <uvms-pom.commons.lang3.version>3.7</uvms-pom.commons.lang3.version>
+        <uvms-pom.joda-time.version>2.9.9</uvms-pom.joda-time.version>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>flatten-maven-plugin</artifactId>
-				<version>1.1.0</version>
-				<configuration>
-					<updatePomFile>true</updatePomFile>
-					<!-- We need to keep all plugin configurations. We only want to resolve variables revision, sha1 and changelist
-						 If we use other modes we will break plugin config and versions inheritance
-						 https://www.mojohaus.org/flatten-maven-plugin/apidocs/org/codehaus/mojo/flatten/FlattenMode.html  -->
-					<flattenMode>resolveCiFriendliesOnly</flattenMode>
-				</configuration>
-				<executions>
-					<execution>
-						<id>flatten</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>flatten</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>flatten.clean</id>
-						<phase>clean</phase>
-						<goals>
-							<goal>clean</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.liquibase</groupId>
-					<artifactId>liquibase-maven-plugin</artifactId>
-					<version>${mare-pom.liquibase.maven.plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>build-helper-maven-plugin</artifactId>
-					<version>${mare-pom.buildhelper.maven.plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.cxf</groupId>
-					<artifactId>cxf-codegen-plugin</artifactId>
-					<version>${mare-pom.cxf.codegen.plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>com.google.code.maven-replacer-plugin</groupId>
-					<artifactId>replacer</artifactId>
-					<version>${mare-pom.replacer.plugin.version}</version>
-				</plugin>
+        <uvms-pom.logging.deps.slf4j.version>1.7.30</uvms-pom.logging.deps.slf4j.version>
 
+        <uvms-pom.test.deps.junit.version>4.12</uvms-pom.test.deps.junit.version>
+        <uvms-pom.test.deps.mockito.version>1.10.19</uvms-pom.test.deps.mockito.version>
+        <uvms-pom.test.deps.easycoverage>2.3.1</uvms-pom.test.deps.easycoverage>
+        <uvms-pom.test.deps.contiperf>2.4.4</uvms-pom.test.deps.contiperf>
+        <uvms-pom.test.deps.powermock.version>1.6.6</uvms-pom.test.deps.powermock.version>
 
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>
-											org.codehaus.mojo
-										</groupId>
-										<artifactId>
-											flatten-maven-plugin
-										</artifactId>
-										<versionRange>
-											[1.1.0,)
-										</versionRange>
-										<goals>
-											<goal>flatten</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-				<plugin>
-        			<groupId>org.eclipse.m2e</groupId>
-        			<artifactId>lifecycle-mapping</artifactId>
-        			<version>1.0.0</version>
-        			<configuration>
-        				<lifecycleMappingMetadata>
-        					<pluginExecutions>
-        						<pluginExecution>
-        							<pluginExecutionFilter>
-        								<groupId>
-        									org.codehaus.mojo
-        								</groupId>
-        								<artifactId>
-        									properties-maven-plugin
-        								</artifactId>
-        								<versionRange>
-        									[1.0-alpha-2,)
-        								</versionRange>
-        								<goals>
-        									<goal>
-        										write-project-properties
-        									</goal>
-        								</goals>
-        							</pluginExecutionFilter>
-        							<action>
-        								<ignore></ignore>
-        							</action>
-        						</pluginExecution>
-        					</pluginExecutions>
-        				</lifecycleMappingMetadata>
-        			</configuration>
-        		</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+        <version.hibernate-jpamodelgen>5.4.12.Final</version.hibernate-jpamodelgen>
+	<context.root>unionvms/</context.root>
+    </properties>
+
+    <scm>
+        <connection>scm:git:https://github.com/UnionVMS/UVMS-Mare-POM.git</connection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Logging -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${uvms-pom.logging.deps.slf4j.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${uvms-pom.logging.deps.slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${uvms-pom.logging.deps.slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>fish.focus.uvms.maven</groupId>
+                <artifactId>uvms-pom-test-deps</artifactId>
+                <version>${uvms-pom.testDeps.version}</version>
+                <type>pom</type>
+                <scope>test</scope>
+            </dependency>
+            <!--OTHER-->
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>${uvms-pom.javaee.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${uvms-pom.commons.collections}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${uvms-pom.commons.lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${uvms-pom.commons.lang.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${uvms-pom.joda-time.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <!-- Test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${uvms-pom.test.deps.junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${uvms-pom.test.deps.mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>${uvms-pom.test.deps.powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito</artifactId>
+            <version>${uvms-pom.test.deps.powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.tocea.easycoverage</groupId>
+            <artifactId>easyCoverage4J-junit</artifactId>
+            <version>${uvms-pom.test.deps.easycoverage}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+            </exclusions>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.databene</groupId>
+            <artifactId>contiperf</artifactId>
+            <version>${uvms-pom.test.deps.contiperf}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.1.0</version>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <!-- We need to keep all plugin configurations. We only want to resolve variables revision, sha1 and changelist
+                         If we use other modes we will break plugin config and versions inheritance
+                         https://www.mojohaus.org/flatten-maven-plugin/apidocs/org/codehaus/mojo/flatten/FlattenMode.html  -->
+                    <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.liquibase</groupId>
+                    <artifactId>liquibase-maven-plugin</artifactId>
+                    <version>${mare-pom.liquibase.maven.plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>${mare-pom.buildhelper.maven.plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-codegen-plugin</artifactId>
+                    <version>${mare-pom.cxf.codegen.plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.google.code.maven-replacer-plugin</groupId>
+                    <artifactId>replacer</artifactId>
+                    <version>${mare-pom.replacer.plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>3.0.0-M1</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
