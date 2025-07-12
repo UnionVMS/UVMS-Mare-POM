@@ -95,7 +95,7 @@
 		<usm.administration.version>2.1.11</usm.administration.version>
 
 		<version.uvms-pom>1.21</version.uvms-pom>
-		<version.commons.lang3>3.7</version.commons.lang3>
+		<version.commons.lang3>3.18.0</version.commons.lang3>
 		<version.hibernate-jpamodelgen>5.4.12.Final</version.hibernate-jpamodelgen>
 
 		<focus-pom.java.version>1.8</focus-pom.java.version>
